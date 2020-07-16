@@ -22,4 +22,10 @@ write.table(tmp,paste0('d:\\data\\R_pj\\txtcrl',as.character(i),'.txt'))
 tmp2 <- readLines("d:\\data\\R_pj\\crl2.csv", encoding = "UTF-8")
 head(tmp2)
 library(readr)
-guess_encoding('d:\\data\\R_pj\\crl3.csv')
+
+for (i in 1:12){
+  print(guess_encoding(paste0('d:\\data\\R_pj\\Ncrl',as.character(i),'.txt')))
+  
+}
+guess_encoding('d:\\data\\R_pj\\Ncrl1.txt')
+

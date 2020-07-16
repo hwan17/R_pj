@@ -7,11 +7,11 @@ library(wordcloud)
 useSejongDic()
 
 setwd("d:\\data\\R_pj")
-txt <- readLines('crl1.csv',encoding = 'euc-kr')
+#txt <- readLines('crl1.csv',encoding = 'euc-kr')
 #txt <- readLines("d:\\data\\testcrl.txt")
-#txt <- readLines("d:\\data\\R_pj\\crl2.csv", encoding="UTF-8")
+txt <- readLines("d:\\data\\R_pj\\acrl1.csv", encoding="UTF-8")
 
-View(txt)
+#View(txt)
 head(txt)
 
 
@@ -38,6 +38,8 @@ re_word<-filter(re_word,nchar(word)>=2)
 #빈도수가 많은 순으로 20개만 
 top_20<-re_word %>%
   arrange(desc(freq)) %>%
-  head(20)
+  head(1000)
 top_20
 
+write.csv(top_20,'d:\\data\\R_pj\\testcsv.csv')
+#write.table(top_20,paste0('d:\\data\\R_pj\\txtacrl',as.character(i),'.txt'))  
